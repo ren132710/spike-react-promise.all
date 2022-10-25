@@ -33,7 +33,11 @@
     ],
     "no-unused-vars": [
       "warn",
-      { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
     ],
     "consistent-return": "off",
     "no-unused-expressions": [
