@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './styles.css';
 import Form from './Form';
 import List from './List';
 
 const AXIOS_TIMEOUT = 10000;
 const URL = 'https://hn.algolia.com/api/v1/search';
-// const URL = "https://hn.algolia.com/api/v1/search-BAD";
+// const URL = 'https://hn.algolia.com/api/v1/search-BAD';
 
 export default function App() {
   const [data, setData] = useState([]);
