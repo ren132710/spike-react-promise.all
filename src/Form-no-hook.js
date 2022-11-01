@@ -2,13 +2,13 @@ import React from 'react';
 
 export default function Form(props) {
   if (!props) return;
-  const { fetchHackerNews, setSearch, search } = props;
+  const { handleClick, setSearch, search } = props;
 
   return (
     <form
       onClick={(e) => {
         e.preventDefault();
-        fetchHackerNews(search);
+        handleClick();
       }}
     >
       <input
