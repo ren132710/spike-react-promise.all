@@ -12,8 +12,6 @@ export default function App() {
 
   // initialize page
   useEffect(() => {
-    console.log('search: ', search);
-    console.log('useEffect: I run only once');
     fetchHackerNews(search);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

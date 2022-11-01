@@ -10,10 +10,12 @@ export default function useHackerNews() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    // on page initialization, wait until search state is set before initial render
     if (!search) return;
+
     let ignore = false;
 
-    console.log(parseSearchValue(search));
+    console.log('search: ', parseSearchValue(search));
 
     const fetchData = async () => {
       setIsLoading(true);
@@ -49,8 +51,7 @@ export default function useHackerNews() {
     setIsError(false);
 
     try {
-      const response = await fetch(`${URL}?query=${query.query}`);
-      console.log('response: ', response);
+      const response = await fetch(`${URL}?query=${query}`);
       const data = await response.json();
 
       return data;
@@ -67,7 +68,5 @@ function parseSearchValue(value) {
   //remove white spaces
   const v = value.replace(/\s/g, '');
   // return array of search terms
-  return v.split(',').map((item) => {
-    return { query: item };
-  });
+  return v.split(',');
 }
