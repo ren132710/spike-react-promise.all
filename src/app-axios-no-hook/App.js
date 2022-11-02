@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Form from './Form';
 import List from './List';
+import '../styles.css';
 
 /**
  * Axios without hook - no Cors errors
@@ -11,7 +12,7 @@ const AXIOS_TIMEOUT = 10000;
 const URL = 'https://hn.algolia.com/api/v1/search';
 // const URL = 'https://hn.algolia.com/api/v1/search-BAD';
 
-export default function App() {
+export default function AppAxiosNoHook() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState(
     'react,hooks,promise.all,ethereum',
@@ -41,7 +42,7 @@ export default function App() {
         params: { query },
       });
 
-      console.log('result: ', result);
+      // console.log('result: ', result);
       return result.data;
     } catch (error) {
       console.log('ERROR: ', error);

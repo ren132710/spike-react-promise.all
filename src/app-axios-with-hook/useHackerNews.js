@@ -50,11 +50,12 @@ export default function useHackerNews() {
       const result = await axios.get(URL, {
         // mode: 'no-cors',
         timeout: `${AXIOS_TIMEOUT}`,
-        // headers: {
-        //   'Access-Control-Allow-Origin': '*',
-        //   Accept: 'application/json',
-        //   'Content-Type': 'application/json',
-        // },
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+          // 'Access-Control-Allow-Methods':
+          //   'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        },
         params: { query },
       });
 

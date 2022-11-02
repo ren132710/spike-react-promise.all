@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import useHackerNews from './useHackerNews';
 import Form from './Form';
 import List from './List';
-import './styles.css';
+import '../styles.css';
 
-export default function App() {
+/**
+ * Axios with hook - raises Cors errors, which I am unable to resolve
+ */
+
+export default function AppAxiosWithHook() {
   const [search, setSearch] = useState(
     'react,hooks,promise.all,ethereum',
   );
