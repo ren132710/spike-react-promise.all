@@ -45,7 +45,7 @@ export default function useHackerNews() {
   async function getHackerNews(query) {
     setIsError(false);
 
-    // commented out options failed to resolve Cors error
+    // options fail to resolve Cors error
     try {
       const result = await axios.get(URL, {
         // mode: 'no-cors',
